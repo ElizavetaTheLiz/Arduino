@@ -1,0 +1,16 @@
+
+int deger = 0;
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(A0,0);
+  pinMode(A1,1);
+
+}
+
+void loop() {
+  Serial.print(analogRead(A0));
+  Serial.print("\n");
+  deger= analogRead(A0);
+  analogWrite(A1, map(deger,0,750,255,0));
+}
