@@ -1,0 +1,18 @@
+#define led A1
+
+
+void setup() {
+  Serial.begin(9600);
+  Serial.println("Ölçüme başladım:");
+  pinMode(A0,0);
+  pinMode(7,1);
+  pinMode(led,1);
+  
+}
+
+void loop() {
+  Serial.print(analogRead(A0));
+  Serial.print("\n");
+  digitalWrite(7,1);
+  analogWrite(led,map(analogRead(A0),0,1023,0,255));
+}
